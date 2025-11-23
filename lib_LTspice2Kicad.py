@@ -43,14 +43,14 @@ comp = []
 for component in dir:
 	if (component[-4:]==".asy") : comp.append(component)
 
-indir = directory.split("\\")
+indir = directory.split(os.sep)
 out_file = "LTspice_" + indir[len(indir)-1] + ".lib"
 outfl = codecs.open(out_file,"w",'utf-8');
 outfl.write("EESchema-LIBRARY Version 2.3\n#encoding utf-8\n#\n")
 
 for component in comp :
 	print(component)
-	in_file = directory + "\\" + component
+	in_file = directory + os.sep + component
 
 	if (component == "ADA4807.asy" or component == "ADA4895.asy") :  # I don't know how to detect automatically the file encoding UTF-16-LE with Python
 		infl = codecs.open(in_file,"r",'utf-16-le');

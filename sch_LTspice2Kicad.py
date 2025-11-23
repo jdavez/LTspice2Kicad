@@ -36,10 +36,10 @@ def find_all(a_str, sub):
         start += len(sub) # use start += 1 to find overlapping matches
 
 in_file = sys.argv[1]
-indir = in_file.split("\\")
+indir = in_file.split(os.sep)
 out_file = "LTspice_" + indir[len(indir)-1]
 
-indir = os.getcwd().split("\\")
+indir = os.getcwd().split(os.sep)
 LTspice_lib = ["LTspice_"+indir[len(indir)-1],"LTspice_sym","LTspice_Comparators","LTSpice_devices","LTspice_Digital","LTspice_FilterProducts","LTspice_Misc","LTspice_Opamps","LTspice_Optos","LTspice_PowerProducts","LTspice_References","LTspice_SpecialFunctions"]
 Kicad_lib = ["power","device","switches","relays","motors","transistors","conn","linear","regul","74xx","cmos4000","adc-dac","memory","xilinx","microcontrollers","dsp","microchip","analog_switches","motorola","texas","intel","audio","interface","digital-audio","philips","display","cypress","siliconi","opto","atmel","contrib","valves"]
 
